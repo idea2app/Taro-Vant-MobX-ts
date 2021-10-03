@@ -58,7 +58,8 @@ const config = {
         }
       }
     },
-  }
+  },
+  plugins: ['@tarojs/plugin-html']
 }
 
 module.exports = function (merge) {

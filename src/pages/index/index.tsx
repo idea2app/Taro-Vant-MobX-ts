@@ -1,9 +1,26 @@
-import { Button } from '@taroify/core'
-import { View } from '@tarojs/components'
-import { Component } from 'react'
-import './index.less'
+import { Button } from '@taroify/core';
+import { Text, View } from '@tarojs/components';
+import { inject, observer } from 'mobx-react';
+import { Component } from 'react';
+import './index.less';
 
-export default class Index extends Component {
+type PageStateProps = {
+  store: {
+    counterStore: {
+      counter: number,
+      addCount: Function,
+      reduceCount: Function,
+    }
+  }
+}
+
+interface Index {
+  props: PageStateProps;
+}
+
+@inject('store')
+@observer
+class Index extends Component {
 
   componentWillMount() { }
 
@@ -16,12 +33,18 @@ export default class Index extends Component {
   componentDidHide() { }
 
   render() {
+    const { counterStore } = this.props.store;
+    const { counter } = counterStore;
+
     return (
       <View className='index'>
-        <span>简阳妇联 Hello world!</span>
-        <Button>点击</Button>
-        <Button color="primary">主要按钮</Button>
+        <span>index</span>
+        <Button onClick={() => counterStore.reduceCount()} color="success">-</Button>
+        <Text>{counter}</Text>
+        <Button onClick={() => counterStore.addCount()} color="primary">+</Button>
       </View>
     )
   }
 }
+
+export default Index
