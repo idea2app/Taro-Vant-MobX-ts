@@ -1,7 +1,6 @@
 # Taro-Vant-MobX-ts
 
-[Taro][1] project scaffold based on [TypeScript][2], [MobX][3] & [Vant][4],
-which is inspired by [WebCell scaffold][5].
+[Taro][1] project scaffold based on [TypeScript][2], [MobX][3] & [Vant][4]
 
 [![CI & CD](https://github.com/idea2app/Taro-Vant-MobX-ts/workflows/CI%20&%20CD/badge.svg)][7]
 
