@@ -1,25 +1,26 @@
 name: CI & CD
 on:
-    push:
-        branches:
-            - master
+  push:
+    branches:
+      - master
 jobs:
-    Build-and-Deploy:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v2
-            - name: Use Node.js
-              uses: actions/setup-node@v2
-              with:
-                  node-version: '14'
-            - name: Install & build
-              run: |
-                  npm install
-                  npm run build:h5
-            - name: Deploy
-              uses: peaceiris/actions-gh-pages@v3
-              with:
-                  publish_dir: ./dist
-                  personal_token: ${{ secrets.GITHUB_TOKEN }}
-                  force_orphan: true
+  Build-and-Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+          cache: yarn
+      - name: Install packages
+        run: yarn
+      - name: Build HTML 5 version
+        run: yarn build:h5
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./dist
+          personal_token: ${{ secrets.GITHUB_TOKEN }}
+          force_orphan: true

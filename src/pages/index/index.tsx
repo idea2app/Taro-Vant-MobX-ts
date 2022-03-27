@@ -1,50 +1,49 @@
-import { Button } from '@taroify/core';
-import { Text, View } from '@tarojs/components';
-import { inject, observer } from 'mobx-react';
 import { Component } from 'react';
+import { inject, observer } from 'mobx-react';
+import { Text, View } from '@tarojs/components';
+import { Button } from '@taroify/core';
+
+import type { StoreProps } from '../../app';
 import './index.less';
 
-type PageStateProps = {
-  store: {
-    counterStore: {
-      counter: number,
-      addCount: Function,
-      reduceCount: Function,
-    }
-  }
-}
+definePageConfig({
+  navigationBarTitleText: '首页'
+});
 
 interface Index {
-  props: PageStateProps;
+  props: StoreProps;
 }
 
 @inject('store')
 @observer
 class Index extends Component {
+  componentWillMount() {}
 
-  componentWillMount() { }
+  componentDidMount() {}
 
-  componentDidMount() { }
+  componentWillUnmount() {}
 
-  componentWillUnmount() { }
+  componentDidShow() {}
 
-  componentDidShow() { }
-
-  componentDidHide() { }
+  componentDidHide() {}
 
   render() {
     const { counterStore } = this.props.store;
     const { counter } = counterStore;
 
     return (
-      <View className='index'>
+      <View className="index">
         <span>index</span>
-        <Button onClick={() => counterStore.reduceCount()} color="success">-</Button>
+        <Button onClick={() => counterStore.reduceCount()} color="success">
+          -
+        </Button>
         <Text>{counter}</Text>
-        <Button onClick={() => counterStore.addCount()} color="primary">+</Button>
+        <Button onClick={() => counterStore.addCount()} color="primary">
+          +
+        </Button>
       </View>
-    )
+    );
   }
 }
 
-export default Index
+export default Index;

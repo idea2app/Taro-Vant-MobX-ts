@@ -1,28 +1,29 @@
-import { Provider } from "mobx-react";
-import { Component } from "react";
-import "./app.less";
-import counterStore from "./store/counter";
+import { Component } from 'react';
+import { Provider } from 'mobx-react';
+
+import './app.less';
+import counterStore from './store/counter';
 
 const store = {
-  counterStore,
+  counterStore
 };
 
+export interface StoreProps {
+  store: typeof store;
+}
+
 class App extends Component {
-  componentDidMount() { }
+  componentDidMount() {}
 
-  componentDidShow() { }
+  componentDidShow() {}
 
-  componentDidHide() { }
+  componentDidHide() {}
 
-  componentDidCatchError() { }
+  componentDidCatchError() {}
 
   // this.props.children 是将要会渲染的页面
   render() {
-    return (
-      <Provider store={store}>
-        {this.props.children}
-      </Provider>
-    );
+    return <Provider store={store}>{this.props.children}</Provider>;
   }
 }
 
