@@ -1,0 +1,42 @@
+each(range(6), {
+  .fs-@{value} {
+    font-size: 16px + (7 - @value) * 4px !important;
+  }
+});
+
+.direction() {
+  s: left;
+  e: right;
+  t: top;
+  b: bottom;
+}
+.space-type() {
+  m: margin;
+  p: padding;
+}
+.space-scale() {
+  0: 0;
+  1: 0.25;
+  2: 0.5;
+  3: 1;
+  4: 1.5;
+  5: 3;
+}
+each(.space-type(), .(@type, @tKey) {
+    .@{tKey}-auto {
+      @{type}: auto !important;
+    }
+    each(.space-scale(), .(@scale, @sKey) {
+      .@{tKey}-@{sKey} {
+        @{type}: 16px * @scale !important;
+      }
+      each(.direction(), .(@direction, @dKey) {
+        .@{tKey}@{dKey}-auto {
+          @{type}-@{direction}: auto !important;
+        }
+        .@{tKey}@{dKey}-@{sKey} {
+          @{type}-@{direction}: 16px * @scale !important;
+        }
+      })
+    })
+  });

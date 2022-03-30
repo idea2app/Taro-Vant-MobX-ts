@@ -1,10 +1,10 @@
 import { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import { Text, View } from '@tarojs/components';
+import { Text } from '@tarojs/components';
 import { Button } from '@taroify/core';
 
-import type { StoreProps } from '../../app';
-import './index.less';
+import { MainNav } from '../components/MainNav';
+import type { StoreProps } from '../app';
 
 definePageConfig({
   navigationBarTitleText: '首页'
@@ -32,7 +32,7 @@ class Index extends Component {
     const { counter } = counterStore;
 
     return (
-      <View className="index">
+      <div>
         <span>index</span>
         <Button onClick={() => counterStore.reduceCount()} color="success">
           -
@@ -41,7 +41,9 @@ class Index extends Component {
         <Button onClick={() => counterStore.addCount()} color="primary">
           +
         </Button>
-      </View>
+
+        <MainNav path="home" />
+      </div>
     );
   }
 }
