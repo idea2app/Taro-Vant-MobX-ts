@@ -2,17 +2,9 @@ import { Component } from 'react';
 import { Provider } from 'mobx-react';
 
 import './app.less';
-import counterStore from './store/counter';
+import store from './store';
 
-const store = {
-  counterStore
-};
-
-export interface StoreProps {
-  store: typeof store;
-}
-
-class App extends Component {
+export default class App extends Component {
   componentDidMount() {}
 
   componentDidShow() {}
@@ -26,5 +18,3 @@ class App extends Component {
     return <Provider store={store}>{this.props.children}</Provider>;
   }
 }
-
-export default App;

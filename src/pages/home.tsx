@@ -1,22 +1,18 @@
-import { Component } from 'react';
+import { PureComponent } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Text } from '@tarojs/components';
 import { Button } from '@taroify/core';
 
 import { MainNav } from '../components/MainNav';
-import type { StoreProps } from '../app';
+import { StoreProps } from '../store';
 
 definePageConfig({
   navigationBarTitleText: '首页'
 });
 
-interface Index {
-  props: StoreProps;
-}
-
 @inject('store')
 @observer
-class Index extends Component {
+export default class HomePage extends PureComponent<StoreProps> {
   componentWillMount() {}
 
   componentDidMount() {}
@@ -32,7 +28,7 @@ class Index extends Component {
     const { counter } = counterStore;
 
     return (
-      <div>
+      <>
         <span>index</span>
         <Button onClick={() => counterStore.reduceCount()} color="success">
           -
@@ -43,9 +39,7 @@ class Index extends Component {
         </Button>
 
         <MainNav path="home" />
-      </div>
+      </>
     );
   }
 }
-
-export default Index;
