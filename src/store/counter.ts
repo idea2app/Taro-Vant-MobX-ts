@@ -1,6 +1,6 @@
-import { action, observable } from "mobx";
+import { observable, action } from 'mobx';
 
-class CounterStore {
+export class CounterStore {
   @observable counter = 1;
 
   @action
@@ -13,5 +13,3 @@ class CounterStore {
     this.counter--;
   }
 }
-
-export default new CounterStore();

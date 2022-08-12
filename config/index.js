@@ -7,6 +7,7 @@ const config = {
     750: 1,
     828: 1.81 / 2
   },
+  compiler: 'webpack5',
   sourceRoot: 'src',
   outputRoot: 'dist',
   defineConstants: {},
