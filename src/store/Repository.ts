@@ -9,7 +9,7 @@ export class RepositoryModel extends ListModel<Repository> {
   client = client;
   baseURI = 'orgs/idea2app/repos';
 
-  protected async loadPage(page: number, per_page: number) {
+  async loadPage(page: number, per_page: number) {
     const { body } = await this.client.get<Repository[]>(
       `${this.baseURI}?${stringify({ page, per_page })}`
     );
