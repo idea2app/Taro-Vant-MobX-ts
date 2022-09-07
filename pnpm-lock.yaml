@@ -34,6 +34,7 @@ specifiers:
   babel-plugin-import: ^1.13.5
   babel-preset-taro: 3.5.5
   bootstrap: ^5.2.0
+  cross-env: ^7.0.3
   eslint: ^8.23.0
   eslint-config-taro: 3.5.5
   eslint-plugin-import: ^2.26.0
@@ -96,6 +97,7 @@ devDependencies:
   '@typescript-eslint/parser': 5.36.2_yqf6kl63nyoq5megxukfnom5rm
   babel-plugin-import: 1.13.5
   babel-preset-taro: 3.5.5_gyviq57ocnpqebvlp576sdkhou
+  cross-env: 7.0.3
   eslint: 8.23.0
   eslint-config-taro: 3.5.5_f7yxu5tbqjufhvsyfb5m3yfevu
   eslint-plugin-import: 2.26.0_iepzrjnvahcxaf6zc7cutko6om
@@ -3877,8 +3879,6 @@ packages:
       babel-register: 6.26.0
       babylon: 6.18.0
       require-from-string: 2.0.2
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /babel-plugin-syntax-class-properties/6.13.0:
@@ -4952,6 +4952,14 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       capture-stack-trace: 1.0.1
+    dev: true
+
+  /cross-env/7.0.3:
+    resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==}
+    engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
+    hasBin: true
+    dependencies:
+      cross-spawn: 7.0.3
     dev: true
 
   /cross-spawn-async/2.2.5:
