@@ -1,3 +1,5 @@
+import { observable } from 'mobx';
+import { observer } from 'mobx-react';
 import { PureComponent } from 'react';
 import { View } from '@tarojs/components';
 import { AreaPicker, Popup } from '@taroify/core';
@@ -15,14 +17,10 @@ export interface AreaSelectProps extends Pick<AreaPickerProps, 'depth'> {
   onChange?: (value: Area[]) => any;
 }
 
-interface State {
-  open: boolean;
-}
-
-export class AreaSelect extends PureComponent<AreaSelectProps, State> {
-  state: Readonly<State> = {
-    open: false
-  };
+@observer
+export class AreaSelect extends PureComponent<AreaSelectProps> {
+  @observable
+  open = false;
 
   AreaLevels = [
     areaList.province_list,
@@ -36,7 +34,7 @@ export class AreaSelect extends PureComponent<AreaSelectProps, State> {
     ...areaList.county_list
   };
 
-  close = () => this.setState({ open: false });
+  close = () => (this.open = false);
 
   change = (values: string[]) => {
     this.close();
@@ -51,11 +49,11 @@ export class AreaSelect extends PureComponent<AreaSelectProps, State> {
 
   render() {
     const { title, value, depth } = this.props,
-      { open } = this.state;
+      { open } = this;
 
     return (
       <>
-        <View onClick={() => this.setState({ open: true })}>
+        <View onClick={() => (this.open = true)}>
           {value
             ? value
                 .filter(Boolean)
