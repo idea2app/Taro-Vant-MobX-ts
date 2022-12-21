@@ -1,4 +1,4 @@
-import { stringify } from 'query-string';
+import queryString from 'query-string';
 import { ListModel } from 'mobx-restful';
 
 import { client } from './service';
@@ -11,7 +11,7 @@ export class RepositoryModel extends ListModel<Repository> {
 
   async loadPage(page: number, per_page: number) {
     const { body } = await this.client.get<Repository[]>(
-      `${this.baseURI}?${stringify({ page, per_page })}`
+      `${this.baseURI}?${queryString.stringify({ page, per_page })}`
     );
     return { pageData: body! };
   }

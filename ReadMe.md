@@ -28,21 +28,21 @@ npm i pnpm -g
 npm set strict-peer-dependencies=false
 
 pnpm i
-pnpm dev:h5
-# pnpm dev:weapp
+pnpm dev h5
+# pnpm dev weapp
 ```
 
 ## Deployment
 
 ```shell
-pnpm build:h5
-# pnpm build:weapp
+pnpm build h5
+# pnpm build weapp
 ```
 
 [1]: https://taro-docs.jd.com/
 [2]: https://www.typescriptlang.org/
 [3]: https://preactjs.com/
-[4]: https://mobx.js.org/
+[4]: https://github.com/mobxjs/mobx/blob/mobx4and5/docs/
 [5]: https://taroify.gitee.io/taroify.com/introduce/
 [6]: https://github.com/idea2app/Taro-Vant-MobX-ts/actions/workflows/main.yml
 [7]: https://getbootstrap.com/docs/5.1/getting-started/contents/#css-files
