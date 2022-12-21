@@ -1,10 +1,10 @@
-import { Component } from 'react';
+import { PropsWithChildren, PureComponent } from 'react';
 import { Provider } from 'mobx-react';
 
 import './app.less';
 import store from './store';
 
-export default class App extends Component {
+export default class App extends PureComponent<PropsWithChildren> {
   componentDidMount() {}
 
   componentDidShow() {}

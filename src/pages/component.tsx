@@ -14,7 +14,7 @@ interface State {
   areaValues?: string[];
 }
 
-export default class ComponentPage extends PureComponent {
+export default class ComponentPage extends PureComponent<{}, State> {
   state: Readonly<State> = {
     range: [4, 6]
   };

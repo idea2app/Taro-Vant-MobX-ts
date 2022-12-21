@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { Form, Slider } from '@taroify/core';
 import { SliderProps } from '@taroify/core/slider';
 
@@ -11,7 +12,7 @@ export interface RangeFieldProps
   message?: string;
 }
 
-export function RangeField({
+export const RangeField: FC<RangeFieldProps> = ({
   title,
   unit,
   name,
@@ -19,22 +20,20 @@ export function RangeField({
   required = false,
   message,
   ...rest
-}: RangeFieldProps) {
-  return (
-    <>
-      <Form.Item>
-        <Form.Label>{title}</Form.Label>
-        <Form.Control>
-          {value?.[0]} ~ {value?.[1]}
-          {unit}
-        </Form.Control>
-      </Form.Item>
-      <Form.Item name={name} rules={[{ required, message }]}>
-        <Form.Label></Form.Label>
-        <Form.Control>
-          <Slider range value={value} {...rest} />
-        </Form.Control>
-      </Form.Item>
-    </>
-  );
-}
+}) => (
+  <>
+    <Form.Item>
+      <Form.Label>{title}</Form.Label>
+      <Form.Control>
+        {value?.[0]} ~ {value?.[1]}
+        {unit}
+      </Form.Control>
+    </Form.Item>
+    <Form.Item name={name} rules={[{ required, message }]}>
+      <Form.Label></Form.Label>
+      <Form.Control>
+        <Slider range value={value} {...rest} />
+      </Form.Control>
+    </Form.Item>
+  </>
+);
