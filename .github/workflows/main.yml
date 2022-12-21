@@ -22,7 +22,7 @@ jobs:
 
       - name: Build HTML 5 version
         if: ${{ !env.WMA_ID }}
-        run: pnpm build:h5
+        run: pnpm build h5
         env:
           NODE_ENV: production
       - name: Deploy HTML 5 version
@@ -35,7 +35,7 @@ jobs:
 
       - name: Build WeChat version
         if: ${{ env.WMA_ID }}
-        run: pnpm build:weapp
+        run: pnpm build weapp
         env:
           NODE_ENV: production
       - name: Get NPM version
