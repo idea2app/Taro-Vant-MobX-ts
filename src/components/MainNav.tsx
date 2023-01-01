@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import { redirectTo } from '@tarojs/taro';
-import { Tabbar } from '@taroify/core';
-import { ClusterOutlined, Exchange, Points } from '@taroify/icons';
+import { Tabbar, TabbarItem } from '@antmjs/vantui';
 
 export interface MainNavProps {
   path: string;
@@ -9,20 +8,20 @@ export interface MainNavProps {
 
 export const MainNav: FC<MainNavProps> = ({ path }) => (
   <Tabbar
-    bordered
+    border
     fixed
-    safeArea="bottom"
-    value={path}
-    onChange={value => redirectTo({ url: `/pages/${value}` })}
+    safeAreaInsetBottom
+    active={path}
+    onChange={({ detail }) => redirectTo({ url: `/pages/${detail}` })}
   >
-    <Tabbar.TabItem icon={<Points />} value="home">
+    <TabbarItem icon="points" name="home">
       MobX
-    </Tabbar.TabItem>
-    <Tabbar.TabItem icon={<ClusterOutlined />} value="component">
+    </TabbarItem>
+    <TabbarItem icon="cluster-o" name="component">
       组件
-    </Tabbar.TabItem>
-    <Tabbar.TabItem icon={<Exchange />} value="interface">
+    </TabbarItem>
+    <TabbarItem icon="exchange" name="interface">
       接口
-    </Tabbar.TabItem>
+    </TabbarItem>
   </Tabbar>
 );

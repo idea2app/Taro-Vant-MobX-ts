@@ -14,11 +14,11 @@ module.exports = {
     [
       'import',
       {
-        libraryName: '@taroify/core',
-        libraryDirectory: '',
+        libraryName: '@antmjs/vantui',
+        libraryDirectory: 'es',
         style: true
       },
-      '@taroify/core'
+      '@antmjs/vantui'
     ]
   ]
 };

@@ -1,7 +1,6 @@
 import { PureComponent } from 'react';
 import { inject, observer } from 'mobx-react';
-import { Text } from '@tarojs/components';
-import { Button } from '@taroify/core';
+import { Button } from '@antmjs/vantui';
 
 import { MainNav } from '../components/MainNav';
 import { StoreProps } from '../store';
@@ -13,12 +12,6 @@ definePageConfig({
 @inject('store')
 @observer
 export default class HomePage extends PureComponent<StoreProps> {
-  componentWillMount() {}
-
-  componentDidMount() {}
-
-  componentWillUnmount() {}
-
   componentDidShow() {}
 
   componentDidHide() {}
@@ -30,11 +23,14 @@ export default class HomePage extends PureComponent<StoreProps> {
     return (
       <>
         <span>index</span>
-        <Button onClick={() => counterStore.reduceCount()} color="success">
+
+        <Button type="primary" onClick={() => counterStore.reduceCount()}>
           -
         </Button>
-        <Text>{counter}</Text>
-        <Button onClick={() => counterStore.addCount()} color="primary">
+
+        <span>{counter}</span>
+
+        <Button type="primary" onClick={() => counterStore.addCount()}>
           +
         </Button>
 

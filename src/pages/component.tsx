@@ -1,5 +1,5 @@
 import { PureComponent } from 'react';
-import { Cell, Form } from '@taroify/core';
+import { CellGroup, Form } from '@antmjs/vantui';
 
 import { MainNav } from '../components/MainNav';
 import { RangeField } from '../components/RangeField';
@@ -11,7 +11,7 @@ definePageConfig({
 
 interface State {
   range: [number, number];
-  areaValues?: string[];
+  areaCode?: string;
 }
 
 export default class ComponentPage extends PureComponent<{}, State> {
@@ -20,34 +20,27 @@ export default class ComponentPage extends PureComponent<{}, State> {
   };
 
   render() {
-    const { range, areaValues } = this.state;
+    const { range, areaCode } = this.state;
 
     return (
       <div>
         <Form>
-          <Cell.Group title="高级控件">
+          <CellGroup title="高级控件">
             <RangeField
               title="范围"
               unit="mm"
               name="range"
               max={100}
               value={range}
-              onChange={range => this.setState({ range })}
+              onChange={({ detail }) => this.setState({ range: detail })}
             />
-            <Form.Item>
-              <Form.Label>所在地</Form.Label>
-              <Form.Control>
-                <AreaSelect
-                  value={areaValues}
-                  onChange={areas =>
-                    this.setState({
-                      areaValues: areas.map(({ value }) => value)
-                    })
-                  }
-                />
-              </Form.Control>
-            </Form.Item>
-          </Cell.Group>
+            <AreaSelect
+              title="所在地"
+              name="area"
+              value={areaCode}
+              onChange={areaCode => this.setState({ areaCode })}
+            />
+          </CellGroup>
         </Form>
 
         <MainNav path="component" />
