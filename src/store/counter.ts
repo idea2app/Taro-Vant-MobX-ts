@@ -1,7 +1,8 @@
 import { observable, action } from 'mobx';
 
 export class CounterStore {
-  @observable counter = 1;
+  @observable
+  counter = 1;
 
   @action
   addCount() {
@@ -13,3 +14,5 @@ export class CounterStore {
     this.counter--;
   }
 }
+
+export default new CounterStore();

@@ -1,18 +1,27 @@
 import queryString from 'query-string';
 import { ListModel } from 'mobx-restful';
+import { components } from '@octokit/openapi-types';
 
 import { client } from './service';
 
-export type Repository = Record<'full_name' | 'html_url', string>;
+export type Organization = components['schemas']['organization-full'];
+export type Repository = components['schemas']['minimal-repository'];
 
 export class RepositoryModel extends ListModel<Repository> {
   client = client;
   baseURI = 'orgs/idea2app/repos';
 
   async loadPage(page: number, per_page: number) {
-    const { body } = await this.client.get<Repository[]>(
+    const { body: pageData } = await this.client.get<Repository[]>(
       `${this.baseURI}?${queryString.stringify({ page, per_page })}`
     );
-    return { pageData: body! };
+    const [_, organization] = this.baseURI.split('/');
+
+    const { body } = await this.client.get<Organization>(
+      `orgs/${organization}`
+    );
+    return { pageData: pageData!, totalCount: body!.public_repos };
   }
 }
+
+export default new RepositoryModel();

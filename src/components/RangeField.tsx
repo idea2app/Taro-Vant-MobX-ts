@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { FormItem, Slider } from '@antmjs/vantui';
+import { Row, Col, FormItem, Slider } from '@antmjs/vantui';
 import { FormItemProps } from '@antmjs/vantui/types/form';
 import { SliderProps } from '@antmjs/vantui/types/slider';
 
@@ -26,11 +26,10 @@ export const RangeField: FC<RangeFieldProps> = ({
       {unit}
     </FormItem>
 
-    <div className="row py-3 px-5">
-      <div className="col-3" />
-      <div className="col-9">
+    <Row>
+      <Col span="14" offset="8" className="py-3">
         <Slider range value={value} {...rest} />
-      </div>
-    </div>
+      </Col>
+    </Row>
   </>
 );

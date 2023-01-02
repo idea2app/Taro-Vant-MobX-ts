@@ -1,23 +1,17 @@
 import { PureComponent } from 'react';
-import { inject, observer } from 'mobx-react';
+import { observer } from 'mobx-react';
 import { Button } from '@antmjs/vantui';
 
 import { MainNav } from '../components/MainNav';
-import { StoreProps } from '../store';
+import counterStore from '../store/counter';
 
 definePageConfig({
   navigationBarTitleText: '首页'
 });
 
-@inject('store')
 @observer
-export default class HomePage extends PureComponent<StoreProps> {
-  componentDidShow() {}
-
-  componentDidHide() {}
-
+export default class HomePage extends PureComponent {
   render() {
-    const { counterStore } = this.props.store;
     const { counter } = counterStore;
 
     return (
