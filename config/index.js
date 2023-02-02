@@ -16,7 +16,17 @@ const config = {
     options: {}
   },
   framework: 'preact',
-  plugins: ['@tarojs/plugin-html'],
+  plugins: [
+    '@tarojs/plugin-html',
+    [
+      '@tarojs/plugin-http',
+      {
+        enableCookie: true,
+        disabledFormData: false,
+        disabledBlob: false
+      }
+    ]
+  ],
   mini: {
     postcss: {
       pxtransform: {
