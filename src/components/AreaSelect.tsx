@@ -1,32 +1,23 @@
 import { observable } from 'mobx';
 import { observer } from 'mobx-react';
 import { PureComponent } from 'react';
-import { View } from '@tarojs/components';
-import { AreaPicker, Popup } from '@taroify/core';
-import { AreaPickerProps } from '@taroify/core/area-picker/area-picker';
+import { FormItem, Area, Popup } from '@antmjs/vantui';
+import { FormItemProps } from '@antmjs/vantui/types/form';
+import { AreaProps } from '@antmjs/vantui/types/area';
 import { areaList } from '@vant/area-data';
 
-export interface Area {
-  value: string;
-  label: string;
-}
+export type Area = Record<'name' | 'code', string>;
 
-export interface AreaSelectProps extends Pick<AreaPickerProps, 'depth'> {
-  title?: string;
-  value?: string[];
-  onChange?: (value: Area[]) => any;
+export interface AreaSelectProps
+  extends Pick<FormItemProps, 'name' | 'required'>,
+    Omit<AreaProps, 'onChange'> {
+  onChange: (value: string) => any;
 }
 
 @observer
 export class AreaSelect extends PureComponent<AreaSelectProps> {
   @observable
-  open = false;
-
-  AreaLevels = [
-    areaList.province_list,
-    areaList.city_list,
-    areaList.county_list
-  ];
+  show = false;
 
   AreaMap = {
     ...areaList.province_list,
@@ -34,54 +25,61 @@ export class AreaSelect extends PureComponent<AreaSelectProps> {
     ...areaList.county_list
   };
 
-  close = () => (this.open = false);
+  get nameValue() {
+    const { value } = this.props;
 
-  change = (values: string[]) => {
+    return (
+      value &&
+      [...value]
+        .map((_, index, code) =>
+          index % 2
+            ? this.AreaMap[
+                code
+                  .slice(0, index + 1)
+                  .join('')
+                  .padEnd(6, '0')
+              ]
+            : ''
+        )
+        .filter(Boolean)
+        .join(' ')
+    );
+  }
+
+  close = () => (this.show = false);
+
+  change: AreaProps['onConfirm'] = ({ detail: { value } }) => {
     this.close();
 
-    this.props.onChange?.(
-      values.map((value, index) => ({
-        value,
-        label: this.AreaLevels[index][value]
-      }))
-    );
+    this.props.onChange?.((value as Area[]).slice(-1)[0].code);
   };
 
   render() {
-    const { title, value, depth } = this.props,
-      { open } = this;
+    const { title, name, value, columnsNum } = this.props,
+      { show, nameValue } = this;
 
     return (
       <>
-        <View onClick={() => (this.open = true)}>
-          {value
-            ? value
-                .filter(Boolean)
-                .map(code => this.AreaMap[code!])
-                .join(' ')
-            : '请选择地区'}
-        </View>
+        <FormItem label={title} name={name}>
+          <span onClick={() => (this.show = true)}>
+            {nameValue || '请选择地区'}
+          </span>
+        </FormItem>
 
         <Popup
-          open={open}
-          placement="bottom"
+          show={show}
+          position="bottom"
           style={{ height: '50vh' }}
           onClose={this.close}
         >
-          <AreaPicker
-            depth={depth}
+          <Area
+            title={title}
+            areaList={areaList}
+            columnsNum={columnsNum}
             value={value}
             onCancel={this.close}
             onConfirm={this.change}
-          >
-            <AreaPicker.Toolbar>
-              <AreaPicker.Button>取消</AreaPicker.Button>
-              <AreaPicker.Title>{title}</AreaPicker.Title>
-              <AreaPicker.Button>确认</AreaPicker.Button>
-            </AreaPicker.Toolbar>
-
-            <AreaPicker.Columns children={areaList} />
-          </AreaPicker>
+          />
         </Popup>
       </>
     );

@@ -1,15 +1,14 @@
 import { FC } from 'react';
-import { Form, Slider } from '@taroify/core';
-import { SliderProps } from '@taroify/core/slider';
+import { Row, Col, FormItem, Slider } from '@antmjs/vantui';
+import { FormItemProps } from '@antmjs/vantui/types/form';
+import { SliderProps } from '@antmjs/vantui/types/slider';
 
 export interface RangeFieldProps
-  extends Pick<SliderProps, 'min' | 'max' | 'onChange'> {
+  extends Pick<FormItemProps, 'name' | 'required' | 'rules'>,
+    Pick<SliderProps, 'min' | 'max' | 'onChange'> {
   title: string;
   unit?: string;
-  name: string;
   value: [number, number];
-  required?: boolean;
-  message?: string;
 }
 
 export const RangeField: FC<RangeFieldProps> = ({
@@ -18,22 +17,19 @@ export const RangeField: FC<RangeFieldProps> = ({
   name,
   value,
   required = false,
-  message,
+  rules,
   ...rest
 }) => (
   <>
-    <Form.Item>
-      <Form.Label>{title}</Form.Label>
-      <Form.Control>
-        {value?.[0]} ~ {value?.[1]}
-        {unit}
-      </Form.Control>
-    </Form.Item>
-    <Form.Item name={name} rules={[{ required, message }]}>
-      <Form.Label></Form.Label>
-      <Form.Control>
+    <FormItem label={title} {...{ name, required, rules }}>
+      {value?.[0]} ~ {value?.[1]}
+      {unit}
+    </FormItem>
+
+    <Row>
+      <Col span="14" offset="8" className="py-3">
         <Slider range value={value} {...rest} />
-      </Form.Control>
-    </Form.Item>
+      </Col>
+    </Row>
   </>
 );

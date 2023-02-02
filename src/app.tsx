@@ -1,12 +1,8 @@
 import { PropsWithChildren, PureComponent } from 'react';
-import { Provider } from 'mobx-react';
 
 import './app.less';
-import store from './store';
 
 export default class App extends PureComponent<PropsWithChildren> {
-  componentDidMount() {}
-
   componentDidShow() {}
 
   componentDidHide() {}
@@ -15,6 +11,6 @@ export default class App extends PureComponent<PropsWithChildren> {
 
   // this.props.children 是将要会渲染的页面
   render() {
-    return <Provider store={store}>{this.props.children}</Provider>;
+    return <>{this.props.children}</>;
   }
 }

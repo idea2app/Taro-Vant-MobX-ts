@@ -1,40 +1,30 @@
 import { PureComponent } from 'react';
-import { inject, observer } from 'mobx-react';
-import { Text } from '@tarojs/components';
-import { Button } from '@taroify/core';
+import { observer } from 'mobx-react';
+import { Button } from '@antmjs/vantui';
 
 import { MainNav } from '../components/MainNav';
-import { StoreProps } from '../store';
+import counterStore from '../store/counter';
 
 definePageConfig({
   navigationBarTitleText: '首页'
 });
 
-@inject('store')
 @observer
-export default class HomePage extends PureComponent<StoreProps> {
-  componentWillMount() {}
-
-  componentDidMount() {}
-
-  componentWillUnmount() {}
-
-  componentDidShow() {}
-
-  componentDidHide() {}
-
+export default class HomePage extends PureComponent {
   render() {
-    const { counterStore } = this.props.store;
     const { counter } = counterStore;
 
     return (
       <>
         <span>index</span>
-        <Button onClick={() => counterStore.reduceCount()} color="success">
+
+        <Button type="primary" onClick={() => counterStore.reduceCount()}>
           -
         </Button>
-        <Text>{counter}</Text>
-        <Button onClick={() => counterStore.addCount()} color="primary">
+
+        <span>{counter}</span>
+
+        <Button type="primary" onClick={() => counterStore.addCount()}>
           +
         </Button>
 
