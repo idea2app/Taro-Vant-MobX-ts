@@ -14,13 +14,13 @@ export const MainNav: FC<MainNavProps> = ({ path }) => (
     active={path}
     onChange={({ detail }) => redirectTo({ url: `/pages/${detail}` })}
   >
-    <TabbarItem icon="points" name="home">
+    <TabbarItem icon='points' name='home'>
       MobX
     </TabbarItem>
-    <TabbarItem icon="cluster-o" name="component">
+    <TabbarItem icon='cluster-o' name='component'>
       组件
     </TabbarItem>
-    <TabbarItem icon="exchange" name="interface">
+    <TabbarItem icon='exchange' name='interface'>
       接口
     </TabbarItem>
   </Tabbar>

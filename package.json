@@ -81,11 +81,13 @@
     "webpack": "~5.75.0"
   },
   "prettier": {
-    "singleQuote": true,
     "trailingComma": "none",
-    "arrowParens": "avoid"
+    "arrowParens": "avoid",
+    "singleQuote": true,
+    "jsxSingleQuote": true
   },
   "lint-staged": {
-    "*.{md,js,ts,tsx,json,yml}": "prettier --write"
+    "*.{md,js,ts,tsx,json,yml}": "prettier --write",
+    "*.{js,jsx,ts,tsx}": "eslint --fix"
   }
 }

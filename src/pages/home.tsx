@@ -18,17 +18,17 @@ export default class HomePage extends PureComponent {
       <>
         <span>index</span>
 
-        <Button type="primary" onClick={() => counterStore.reduceCount()}>
+        <Button type='primary' onClick={() => counterStore.reduceCount()}>
           -
         </Button>
 
         <span>{counter}</span>
 
-        <Button type="primary" onClick={() => counterStore.addCount()}>
+        <Button type='primary' onClick={() => counterStore.addCount()}>
           +
         </Button>
 
-        <MainNav path="home" />
+        <MainNav path='home' />
       </>
     );
   }

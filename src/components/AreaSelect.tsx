@@ -68,7 +68,7 @@ export class AreaSelect extends PureComponent<AreaSelectProps> {
 
         <Popup
           show={show}
-          position="bottom"
+          position='bottom'
           style={{ height: '50vh' }}
           onClose={this.close}
         >
