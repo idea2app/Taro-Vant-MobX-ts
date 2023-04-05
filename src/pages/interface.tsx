@@ -13,7 +13,7 @@ export default class InterfacePage extends PureComponent {
       <>
         <GitList style={{ height: '90vh' }} />
 
-        <MainNav path="interface" />
+        <MainNav path='interface' />
       </>
     );
   }

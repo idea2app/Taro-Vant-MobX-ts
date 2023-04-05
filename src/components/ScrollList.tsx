@@ -62,7 +62,7 @@ export abstract class ScrollList<
       >
         {this.renderList()}
 
-        <footer className="mt-4 text-center text-muted small">
+        <footer className='mt-4 text-center text-muted small'>
           {noMore || !allItems.length ? t('no_more') : t('load_more')}
         </footer>
       </ScrollView>
