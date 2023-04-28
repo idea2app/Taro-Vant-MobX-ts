@@ -1,6 +1,6 @@
-import queryString from 'query-string';
-import { ListModel } from 'mobx-restful';
 import { components } from '@octokit/openapi-types';
+import { ListModel } from 'mobx-restful';
+import queryString from 'query-string';
 
 import { client } from './service';
 
@@ -15,7 +15,7 @@ export class RepositoryModel extends ListModel<Repository> {
     const { body: pageData } = await this.client.get<Repository[]>(
       `${this.baseURI}?${queryString.stringify({ page, per_page })}`
     );
-    const [_, organization] = this.baseURI.split('/');
+    const [, organization] = this.baseURI.split('/');
 
     const { body } = await this.client.get<Organization>(
       `orgs/${organization}`

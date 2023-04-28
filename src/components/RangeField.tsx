@@ -1,7 +1,7 @@
-import { FC } from 'react';
-import { Row, Col, FormItem, Slider } from '@antmjs/vantui';
+import { Col, FormItem, Row, Slider } from '@antmjs/vantui';
 import { FormItemProps } from '@antmjs/vantui/types/form';
 import { SliderProps } from '@antmjs/vantui/types/slider';
+import { FC } from 'react';
 
 export interface RangeFieldProps
   extends Pick<FormItemProps, 'name' | 'required' | 'rules'>,

@@ -1,9 +1,9 @@
+import { Cell, CellGroup } from '@antmjs/vantui';
 import { observer } from 'mobx-react';
-import { CellGroup, Cell } from '@antmjs/vantui';
 
-import { ScrollListProps, ScrollList } from './ScrollList';
-import { i18n } from '../store/Translation';
 import repositoryStore, { Repository } from '../store/Repository';
+import { i18n } from '../store/Translation';
+import { ScrollList, ScrollListProps } from './ScrollList';
 
 export type GitListProps = ScrollListProps<Repository>;
 
@@ -24,7 +24,7 @@ export class GitList extends ScrollList<GitListProps> {
     return (
       <CellGroup>
         {allItems.map(({ full_name, description }) => (
-          <Cell title={full_name} label={description} />
+          <Cell key={full_name} title={full_name} label={description} />
         ))}
       </CellGroup>
     );

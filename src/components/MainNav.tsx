@@ -1,6 +1,6 @@
-import { FC } from 'react';
-import { redirectTo } from '@tarojs/taro';
 import { Tabbar, TabbarItem } from '@antmjs/vantui';
+import { redirectTo } from '@tarojs/taro';
+import { FC } from 'react';
 
 export interface MainNavProps {
   path: string;
