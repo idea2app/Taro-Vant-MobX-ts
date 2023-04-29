@@ -1,12 +1,12 @@
-import { RequestOptions, ClientOptions, Request, Response } from 'koajax';
-import { BaseListModel } from 'mobx-restful';
 import {
   getStorageSync,
-  setStorageSync,
   request as call,
-  uploadFile,
-  showModal
+  setStorageSync,
+  showModal,
+  uploadFile
 } from '@tarojs/taro';
+import { ClientOptions, Request, RequestOptions, Response } from 'koajax';
+import { BaseListModel } from 'mobx-restful';
 
 type Client = BaseListModel<{}>['client'];
 

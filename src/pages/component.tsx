@@ -1,9 +1,9 @@
-import { PureComponent } from 'react';
 import { CellGroup, Form } from '@antmjs/vantui';
+import { PureComponent } from 'react';
 
+import { AreaSelect } from '../components/AreaSelect';
 import { MainNav } from '../components/MainNav';
 import { RangeField } from '../components/RangeField';
-import { AreaSelect } from '../components/AreaSelect';
 
 definePageConfig({
   navigationBarTitleText: '高级组件演示'

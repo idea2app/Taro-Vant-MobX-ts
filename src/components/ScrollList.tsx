@@ -1,8 +1,8 @@
+import { ScrollView, ScrollViewProps } from '@tarojs/components';
 import debounce from 'lodash.debounce';
 import { TranslationModel } from 'mobx-i18n';
-import { DataObject, NewData, ListModel, Stream } from 'mobx-restful';
+import { DataObject, ListModel, NewData, Stream } from 'mobx-restful';
 import { Component, ReactNode } from 'react';
-import { ScrollView, ScrollViewProps } from '@tarojs/components';
 
 export interface ScrollListProps<T extends DataObject = DataObject>
   extends Pick<ScrollViewProps, 'className' | 'style'> {

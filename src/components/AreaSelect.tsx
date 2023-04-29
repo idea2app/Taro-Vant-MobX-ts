@@ -1,10 +1,10 @@
+import { Area, FormItem, Popup } from '@antmjs/vantui';
+import { AreaProps } from '@antmjs/vantui/types/area';
+import { FormItemProps } from '@antmjs/vantui/types/form';
+import { areaList } from '@vant/area-data';
 import { observable } from 'mobx';
 import { observer } from 'mobx-react';
 import { PureComponent } from 'react';
-import { FormItem, Area, Popup } from '@antmjs/vantui';
-import { FormItemProps } from '@antmjs/vantui/types/form';
-import { AreaProps } from '@antmjs/vantui/types/area';
-import { areaList } from '@vant/area-data';
 
 export type Area = Record<'name' | 'code', string>;
 

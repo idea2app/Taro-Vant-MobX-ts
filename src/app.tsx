@@ -1,6 +1,6 @@
-import { PropsWithChildren, PureComponent } from 'react';
-
 import './app.less';
+
+import { PropsWithChildren, PureComponent } from 'react';
 
 export default class App extends PureComponent<PropsWithChildren> {
   componentDidShow() {}

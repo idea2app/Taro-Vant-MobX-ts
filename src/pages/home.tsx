@@ -1,6 +1,6 @@
-import { PureComponent } from 'react';
-import { observer } from 'mobx-react';
 import { Button } from '@antmjs/vantui';
+import { observer } from 'mobx-react';
+import { PureComponent } from 'react';
 
 import { MainNav } from '../components/MainNav';
 import counterStore from '../store/counter';
