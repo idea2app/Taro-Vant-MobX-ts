@@ -13,7 +13,12 @@ export class RepositoryModel extends ListModel<Repository> {
 
   async loadPage(page: number, per_page: number) {
     const { body: pageData } = await this.client.get<Repository[]>(
-      `${this.baseURI}?${queryString.stringify({ page, per_page })}`
+      `${this.baseURI}?${queryString.stringify({
+        type: 'public',
+        sort: 'pushed',
+        page,
+        per_page
+      })}`
     );
     const [, organization] = this.baseURI.split('/');
 
