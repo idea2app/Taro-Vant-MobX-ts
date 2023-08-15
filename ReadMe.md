@@ -10,10 +10,10 @@ https://ideapp.dev/Taro-Vant-MobX-ts/
 
 ## Technology stack
 
-- Language: [TypeScript v4][2]
+- Language: [TypeScript v5][2]
 - Component engine: [Preact 10][3]
 - State management: [MobX v4][4]
-- Component suite: [AntM Vant UI v2][5] + [Bootstrap v5 (CSS utility)][7]
+- Component suite: [AntM Vant UI v3][5] + [Bootstrap v5 (CSS utility)][7]
 - CI / CD: GitHub [Actions][8] + [Pages][9]
 
 ## Extra components
@@ -23,6 +23,8 @@ https://ideapp.dev/Taro-Vant-MobX-ts/
 
 ## Development
 
+### Install & Start
+
 ```shell
 npm i pnpm -g
 npm set strict-peer-dependencies=false
@@ -30,6 +32,24 @@ npm set strict-peer-dependencies=false
 pnpm i
 pnpm dev h5
 # pnpm dev weapp
+```
+
+### Mini-app Debug
+
+#### Windows
+
+```shell
+winget install Tencent.WeixinDevTools
+winget install Tencent.qq-devtool
+winget install Alibaba.MiniProgramStudio
+winget install ByteDance.DouyinIDE
+winget install Baidu.SwanIDE
+```
+
+#### Mac OS X
+
+```shell
+brew install --cask wechatwebdevtools
 ```
 
 ## Deployment
