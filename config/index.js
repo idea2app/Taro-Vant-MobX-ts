@@ -49,6 +49,9 @@ const config = {
     },
     miniCssExtractPluginOption: {
       ignoreOrder: true
+    },
+    optimizeMainPackage: {
+      enable: true
     }
   },
   h5: {
