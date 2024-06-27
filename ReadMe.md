@@ -1,4 +1,4 @@
-# Taro-Vant-MobX.ts
+# Taro-Vant-MobX-ts
 
 [Taro][1] project scaffold based on [TypeScript][2], [Preact][3], [MobX][4] & [Vant][5]
 
@@ -14,7 +14,7 @@ https://idea2app.github.io/Taro-Vant-MobX-ts/
 ## Technology stack
 
 - Language: [TypeScript v5][2]
-- Component engine: [Preact 10][3]
+- Component engine: [Preact v10][3]
 - State management: [MobX v4][4]
 - Component suite: [AntM Vant UI v3][5] + [Bootstrap v5 (CSS utility)][9]
 - CI / CD: GitHub [Actions][10] + [Pages][11]
@@ -26,15 +26,22 @@ https://idea2app.github.io/Taro-Vant-MobX-ts/
 
 ## Best practice
 
-1. Install **[Settings][12] GitHub app** in your account or organization
-2. Click the **[<kbd>Use this template</kbd>][13] button** on the top of this GitHub repository's home page, then create your own repository in the app-installed namespace above
-3. Click the **[<kbd>Open in GitHub codespaces</kbd>][7] button** on the top of ReadMe file, then an **online VS Code development environment** will be started immediately
+1.  Install GitHub apps in your organization or account:
 
-4. Set [Vercel variables][14] as [Repository secrets][15], then every commit will get an independent **Preview URL**
+    1.  [Probot settings][12]: set up Issue labels & Pull Request rules
+    2.  [PR badge][13]: set up Online [VS Code][14] editor entries in Pull Request description
 
-5. Recommend to add a [Notification step in GitHub actions][16] for your Team IM app
-6. Remind the PMs & users of your product to submit **Feature/Enhancement** requests or **Bug** reports with [Issue forms][17] instead of IM messages or Mobile Phone calls
-7. Collect all these issues into [Project kanbans][18], then create **Pull requests** & add `closes #issue_number` into its description for automation
+2.  Click the **[<kbd>Use this template</kbd>][15] button** on the top of this GitHub repository's home page, then create your own repository in the app-installed namespace above
+
+3.  Click the **[<kbd>Open in GitHub codespaces</kbd>][7] button** on the top of ReadMe file, then an **online VS Code development environment** will be started immediately
+
+4.  Set [Vercel variables][16] as [Repository secrets][17], then every commit will get an independent **Preview URL**
+
+5.  Recommend to add a [Notification step in GitHub actions][18] for your Team IM app
+
+6.  Remind the PMs & users of your product to submit **Feature/Enhancement** requests or **Bug** reports with [Issue forms][19] instead of IM messages or Mobile Phone calls
+
+7.  Collect all these issues into [Project kanbans][20], then create **Pull requests** & add `closes #issue_number` into its description for automation
 
 ## Development
 
@@ -91,9 +98,11 @@ pnpm build weapp
 [10]: https://github.com/features/actions
 [11]: https://pages.github.com/
 [12]: https://github.com/apps/settings
-[13]: https://github.com/new?template_name=Taro-Vant-MobX-ts&template_owner=idea2app
-[14]: https://github.com/idea2app/Next-Bootstrap-ts/blob/80967ed49045af9dbcf4d3695a2c39d53a6f71f1/.github/workflows/pull-request.yml#L9-L11
-[15]: https://github.com/idea2app/Taro-Vant-MobX-ts/settings/secrets/actions
-[16]: https://github.com/kaiyuanshe/kaiyuanshe.github.io/blob/bb4675a56bf1d6b207231313da5ed0af7cf0ebd6/.github/workflows/pull-request.yml#L32-L56
-[17]: https://github.com/idea2app/Taro-Vant-MobX-ts/issues/new/choose
-[18]: https://github.com/idea2app/Taro-Vant-MobX-ts/projects
+[13]: https://pullrequestbadge.com/
+[14]: https://code.visualstudio.com/
+[15]: https://github.com/new?template_name=Taro-Vant-MobX-ts&template_owner=idea2app
+[16]: https://github.com/idea2app/Taro-Vant-MobX-ts/blob/a25e770ae6b405eb1b152cec2f17f354c00be9fb/.github/workflows/main.yml#L12-L15
+[17]: https://github.com/idea2app/Taro-Vant-MobX-ts/settings/secrets/actions
+[18]: https://github.com/kaiyuanshe/kaiyuanshe.github.io/blob/bb4675a56bf1d6b207231313da5ed0af7cf0ebd6/.github/workflows/pull-request.yml#L32-L56
+[19]: https://github.com/idea2app/Taro-Vant-MobX-ts/issues/new/choose
+[20]: https://github.com/idea2app/Taro-Vant-MobX-ts/projects
