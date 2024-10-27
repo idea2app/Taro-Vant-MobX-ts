@@ -14,14 +14,14 @@ jobs:
       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
       WMA_ID: ${{ secrets.WMA_ID }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v4
         with:
           version: 9
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           cache: pnpm
       - name: Install Dependencies
         run: pnpm i --frozen-lockfile
@@ -34,7 +34,7 @@ jobs:
 
       - name: Deploy HTML 5 version to GitHub pages
         if: ${{ !env.WMA_ID }}
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           publish_dir: ./dist
           personal_token: ${{ secrets.GITHUB_TOKEN }}
@@ -64,7 +64,7 @@ jobs:
 
       - name: Upload Artifact
         if: ${{ env.WMA_ID }}
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Taro-miniapp-${{ steps.package-version.outputs.current-version }}-bundle
           path: ./dist/
