@@ -15,7 +15,7 @@ https://idea2app.github.io/Taro-Vant-MobX-ts/
 
 - Language: [TypeScript v5][2]
 - Component engine: [Preact v10][3]
-- State management: [MobX v4][4]
+- State management: [MobX v6][4]
 - Component suite: [AntM Vant UI v3][5] + [Bootstrap v5 (CSS utility)][9]
 - CI / CD: GitHub [Actions][10] + [Pages][11]
 

@@ -3,4 +3,5 @@ package-lock.json
 yarn.lock
 .swc/
 dist/
+.vscode/settings.json
 .vercel

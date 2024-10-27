@@ -4,7 +4,7 @@ import { FormItemProps } from '@antmjs/vantui/types/form';
 import { areaList } from '@vant/area-data';
 import { observable } from 'mobx';
 import { observer } from 'mobx-react';
-import { PureComponent } from 'react';
+import { Component } from 'react';
 
 export type Area = Record<'name' | 'code', string>;
 
@@ -15,9 +15,9 @@ export interface AreaSelectProps
 }
 
 @observer
-export class AreaSelect extends PureComponent<AreaSelectProps> {
+export class AreaSelect extends Component<AreaSelectProps> {
   @observable
-  show = false;
+  accessor show = false;
 
   AreaMap = {
     ...areaList.province_list,

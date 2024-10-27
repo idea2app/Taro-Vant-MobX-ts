@@ -5,7 +5,7 @@
     "removeComments": false,
     "preserveConstEnums": true,
     "moduleResolution": "node",
-    "experimentalDecorators": true,
+    "useDefineForClassFields": true,
     "noImplicitAny": false,
     "allowSyntheticDefaultImports": true,
     "outDir": "lib",

@@ -1,5 +1,7 @@
 import { CellGroup, Form } from '@antmjs/vantui';
-import { PureComponent } from 'react';
+import { observable } from 'mobx';
+import { observer } from 'mobx-react';
+import { Component } from 'react';
 
 import { AreaSelect } from '../components/AreaSelect';
 import { MainNav } from '../components/MainNav';
@@ -9,18 +11,16 @@ definePageConfig({
   navigationBarTitleText: '高级组件演示'
 });
 
-interface State {
-  range: [number, number];
-  areaCode?: string;
-}
+@observer
+export default class ComponentPage extends Component {
+  @observable
+  accessor range: [number, number] = [4, 6];
 
-export default class ComponentPage extends PureComponent<{}, State> {
-  state: Readonly<State> = {
-    range: [4, 6]
-  };
+  @observable
+  accessor areaCode = '';
 
   render() {
-    const { range, areaCode } = this.state;
+    const { range, areaCode } = this;
 
     return (
       <div>
@@ -32,13 +32,13 @@ export default class ComponentPage extends PureComponent<{}, State> {
               name='range'
               max={100}
               value={range}
-              onChange={({ detail }) => this.setState({ range: detail })}
+              onChange={({ detail }) => (this.range = detail)}
             />
             <AreaSelect
               title='所在地'
               name='area'
               value={areaCode}
-              onChange={areaCode => this.setState({ areaCode })}
+              onChange={areaCode => (this.areaCode = areaCode)}
             />
           </CellGroup>
         </Form>

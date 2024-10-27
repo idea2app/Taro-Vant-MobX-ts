@@ -6,11 +6,15 @@ module.exports = {
       'taro',
       {
         framework: 'preact',
-        ts: true
+        ts: true,
+        decoratorsBeforeExport: true,
+        decoratorsLegacy: false
       }
     ]
   ],
   plugins: [
+    // https://babeljs.io/docs/babel-plugin-proposal-decorators#note-compatibility-with-babelplugin-transform-class-properties
+    ['@babel/plugin-proposal-decorators', { version: '2023-05' }],
     [
       'import',
       {
