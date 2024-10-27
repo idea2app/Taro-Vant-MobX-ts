@@ -59,32 +59,36 @@
     "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/plugin-proposal-decorators": "^7.25.9",
     "@babel/preset-react": "^7.25.9",
+    "@eslint/compat": "^1.2.1",
     "@octokit/openapi-types": "^22.2.0",
     "@prefresh/babel-plugin": "^0.5.1",
     "@prefresh/core": "^1.5.2",
     "@prefresh/webpack": "~4.0.1",
     "@tarojs/cli": "4.0.7",
     "@tarojs/webpack5-runner": "4.0.7",
+    "@types/eslint-config-prettier": "^6.11.3",
+    "@types/eslint__js": "^8.42.3",
     "@types/lodash.debounce": "^4.0.9",
     "@types/react": "^18.3.12",
     "@types/webpack-env": "^1.18.5",
-    "@typescript-eslint/eslint-plugin": "^8.11.0",
-    "@typescript-eslint/parser": "^8.11.0",
     "babel-plugin-import": "^1.13.8",
     "babel-preset-taro": "4.0.7",
     "cross-env": "^7.0.3",
-    "eslint": "^8.57.1",
-    "eslint-config-taro": "4.0.7",
-    "eslint-plugin-import": "^2.31.0",
+    "eslint": "^9.13.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react": "^7.37.2",
-    "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
+    "globals": "^15.11.0",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
     "stylelint": "^16.10.0",
     "typescript": "~5.6.3",
+    "typescript-eslint": "^8.11.0",
     "webpack": "~5.95.0"
+  },
+  "resolutions": {
+    "native-file-system-adapter": "npm:@tech_query/native-file-system-adapter@^3.0.3"
   },
   "prettier": {
     "trailingComma": "none",
@@ -94,6 +98,6 @@
   },
   "lint-staged": {
     "*.{md,js,ts,tsx,json,yml}": "prettier --write",
-    "*.{js,jsx,ts,tsx}": "eslint --fix"
+    "*.{js,ts,tsx}": "eslint --fix"
   }
 }
