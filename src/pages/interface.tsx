@@ -1,3 +1,5 @@
+import '../store/service';
+
 import { Cell, CellGroup } from '@antmjs/vantui';
 import { RepositoryModel } from 'mobx-github';
 
