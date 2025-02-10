@@ -4,8 +4,12 @@
 
 [![CI & CD](https://github.com/idea2app/Taro-Vant-MobX-ts/actions/workflows/main.yml/badge.svg)][6]
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)][7]
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)][8]
+## 🌏 Open in the Cloud
+
+Click any of the buttons below to start a new development environment so you can demo or contribute to the codebase without having to install anything on your machine:
+
+[![Open in VS Code](https://img.shields.io/badge/Open%20in-VS%20Code-blue?logo=visualstudiocode)][21] [![Open in Glitch](https://img.shields.io/badge/Open%20in-Glitch-blue?logo=glitch)][22] [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)][7]
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)][8][![Edit in Codesandbox](https://codesandbox.io/static/img/play-codesandbox.svg)][23]  [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)][24]  [![Open in Repl.it](https://replit.com/badge/github/withastro/astro)][25]  [![Open in Codeanywhere](https://codeanywhere.com/img/open-in-codeanywhere-btn.svg)][26]  
 
 ## Demo
 
@@ -106,3 +110,9 @@ pnpm build weapp
 [18]: https://github.com/kaiyuanshe/kaiyuanshe.github.io/blob/bb4675a56bf1d6b207231313da5ed0af7cf0ebd6/.github/workflows/pull-request.yml#L32-L56
 [19]: https://github.com/idea2app/Taro-Vant-MobX-ts/issues/new/choose
 [20]: https://github.com/idea2app/Taro-Vant-MobX-ts/projects
+[21]: https://vscode.dev/github/idea2app/Taro-Vant-MobX-ts
+[22]: https://glitch.com/edit/#!/import/github/idea2app/Taro-Vant-MobX-ts
+[23]: https://codesandbox.io/s/github/idea2app/Taro-Vant-MobX-ts
+[24]: https://stackblitz.com/github/idea2app/Taro-Vant-MobX-ts
+[25]: https://replit.com/github/idea2app/Taro-Vant-MobX-ts
+[26]: https://app.codeanywhere.com/#https://github.com/idea2app/Taro-Vant-MobX-ts
