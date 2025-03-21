@@ -45,6 +45,7 @@
     "bootstrap": "^5.3.3",
     "classnames": "^2.5.1",
     "koajax": "^3.1.2",
+    "koajax-taro-adapter": "^0.2.0",
     "lodash.debounce": "^4.0.8",
     "mobx": "^6.13.7",
     "mobx-github": "^0.3.5",
