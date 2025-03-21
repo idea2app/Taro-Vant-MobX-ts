@@ -2,7 +2,7 @@ import { action, observable } from 'mobx';
 
 export class CounterStore {
   @observable
-  counter = 1;
+  accessor counter = 1;
 
   @action
   addCount() {
