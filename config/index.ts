@@ -11,8 +11,8 @@ import prodConfig from './prod';
 
 export default defineConfig(async (merge, {}) => {
   const baseConfig: UserConfigExport = {
-    projectName: 'digital-nomad-public-space',
-    date: '2023-5-6',
+    projectName: 'taro-vant-mobx-ts',
+    date: '2025-3-23',
     designWidth: 750,
     deviceRatio: {
       640: 2.34 / 2,

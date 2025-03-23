@@ -13,7 +13,7 @@ export default observer(() => {
 
   return (
     <>
-      <div className='flex items-center justify-center p-4'>
+      <div className='flex items-center justify-center p-6 bg-red-50'>
         <span>index</span>
 
         <Button type='primary' onClick={() => counterStore.reduceCount()}>
@@ -21,11 +21,7 @@ export default observer(() => {
         </Button>
 
         <span>{counter}</span>
-        <Button
-          className='ml-4'
-          type='primary'
-          onClick={() => counterStore.addCount()}
-        >
+        <Button type='primary' onClick={() => counterStore.addCount()}>
           +
         </Button>
       </div>

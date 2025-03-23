@@ -1,10 +1,16 @@
-/* H5 */
-/* @import 'tailwindcss'; */
+/* for h5 and react native */
+@layer theme, base, van, components, utilities;
 
-/* mini app */
-@import 'weapp-tailwindcss';
+@import 'tailwindcss/theme.css' layer(theme);
+@import '@tarojs/components/global.css' layer(theme);
+@import 'tailwindcss/preflight.css' layer(base);
+@import '@antmjs/vantui/lib/index.css' layer(van);
+@import 'tailwindcss/utilities.css' layer(utilities);
 
 /* https://docs.taro.zone/en/docs/use-h5#span-default-representation-is-block-level-style */
-.h5-span {
+span {
   display: inline;
 }
+
+/* weapp-tailwindcss@4 for mini app */
+/* @import 'weapp-tailwindcss'; */
