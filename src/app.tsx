@@ -1,4 +1,4 @@
-import './app.less';
+import './app.css';
 
 import { configure } from 'mobx';
 import { PropsWithChildren, PureComponent } from 'react';

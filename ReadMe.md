@@ -16,7 +16,7 @@ https://idea2app.github.io/Taro-Vant-MobX-ts/
 - Language: [TypeScript v5][2]
 - Component engine: [Preact v10][3]
 - State management: [MobX v6][4]
-- Component suite: [AntM Vant UI v3][5] + [Bootstrap v5 (CSS utility)][9]
+- Component suite: [AntM Vant UI v3][5] + [Tailwind V4 (CSS utility)][9]
 - CI / CD: GitHub [Actions][10] + [Pages][11]
 
 ## Extra components
@@ -94,7 +94,7 @@ pnpm build weapp
 [6]: https://github.com/idea2app/Taro-Vant-MobX-ts/actions/workflows/main.yml
 [7]: https://codespaces.new/idea2app/Taro-Vant-MobX-ts
 [8]: https://gitpod.io/?autostart=true#https://github.com/idea2app/Taro-Vant-MobX-ts
-[9]: https://getbootstrap.com/docs/5.1/getting-started/contents/#css-files
+[9]: https://tw.icebreaker.top/docs/quick-start/v4/taro-webpack
 [10]: https://github.com/features/actions
 [11]: https://pages.github.com/
 [12]: https://github.com/apps/settings

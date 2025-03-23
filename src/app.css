@@ -1,0 +1,10 @@
+/* H5 */
+/* @import 'tailwindcss'; */
+
+/* mini app */
+@import 'weapp-tailwindcss';
+
+/* https://docs.taro.zone/en/docs/use-h5#span-default-representation-is-block-level-style */
+.h5-span {
+  display: inline;
+}
