@@ -2,6 +2,7 @@ import cspellPlugin from "@cspell/eslint-plugin";
 import eslint from "@eslint/js";
 import stylistic from "@stylistic/eslint-plugin";
 import eslintConfigPrettier from "eslint-config-prettier";
+import jsxA11y from "eslint-plugin-jsx-a11y";
 import react from "eslint-plugin-react";
 import simpleImportSortPlugin from "eslint-plugin-simple-import-sort";
 import globals from "globals";
@@ -21,6 +22,7 @@ export default tsEslint.config(
     plugins: {
       "@typescript-eslint": tsEslint.plugin,
       react,
+      jsxA11y,
       "@stylistic": stylistic,
       "simple-import-sort": simpleImportSortPlugin,
       "@cspell": cspellPlugin,
@@ -33,6 +35,7 @@ export default tsEslint.config(
 
   // extends ...
   eslint.configs.recommended,
+  jsxA11y.flatConfigs.recommended,
   ...tsEslint.configs.recommended,
 
   // base config

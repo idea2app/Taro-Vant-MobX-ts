@@ -5,10 +5,6 @@ import { UnifiedWebpackPluginV5 } from 'weapp-tailwindcss/webpack';
 import devConfig from './dev';
 import prodConfig from './prod';
 
-// const isH5 = process.env.TARO_ENV === 'h5';
-// const isApp = process.env.TARO_ENV === 'rn';
-// const WeappTailwindcssDisabled = isH5 || isApp;
-
 export default defineConfig(async (merge, {}) => {
   const baseConfig: UserConfigExport = {
     projectName: 'taro-vant-mobx-ts',
@@ -66,7 +62,6 @@ export default defineConfig(async (merge, {}) => {
                 {
                   appType: 'taro',
                   injectAdditionalCssVarScope: true,
-                  // disabled: WeappTailwindcssDisabled,
                   rem2rpx: true
                 }
               ]
