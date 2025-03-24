@@ -69,14 +69,13 @@ export class AreaSelect extends Component<AreaSelectProps> {
     return (
       <>
         <FormItem label={title} name={name}>
-          <span
-            role='button'
+          <button
             tabIndex={0}
             onClick={() => (this.show = true)}
             onKeyDown={this.handleKeyDown}
           >
             {nameValue || '请选择地区'}
-          </span>
+          </button>
         </FormItem>
 
         <Popup
