@@ -14,7 +14,7 @@ export default observer(() => {
   return (
     <>
       <div className='flex items-center justify-center p-6 bg-red-50'>
-        <span>index</span>
+        <span>count</span>
 
         <Button type='primary' onClick={() => counterStore.reduceCount()}>
           -
