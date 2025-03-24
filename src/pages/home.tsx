@@ -13,17 +13,18 @@ export default observer(() => {
 
   return (
     <>
-      <span>index</span>
+      <div className='flex items-center justify-center p-6 bg-red-50'>
+        <span>count</span>
 
-      <Button type='primary' onClick={() => counterStore.reduceCount()}>
-        -
-      </Button>
+        <Button type='primary' onClick={() => counterStore.reduceCount()}>
+          -
+        </Button>
 
-      <span>{counter}</span>
-
-      <Button type='primary' onClick={() => counterStore.addCount()}>
-        +
-      </Button>
+        <span>{counter}</span>
+        <Button type='primary' onClick={() => counterStore.addCount()}>
+          +
+        </Button>
+      </div>
 
       <MainNav path='home' />
     </>
