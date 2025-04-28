@@ -18,7 +18,7 @@ jobs:
       - uses: pnpm/action-setup@v4
         if: ${{ !env.VERCEL_TOKEN || !env.VERCEL_ORG_ID || !env.VERCEL_PROJECT_ID }}
         with:
-          version: 9
+          version: 10
       - uses: actions/setup-node@v4
         if: ${{ !env.VERCEL_TOKEN || !env.VERCEL_ORG_ID || !env.VERCEL_PROJECT_ID }}
         with:
