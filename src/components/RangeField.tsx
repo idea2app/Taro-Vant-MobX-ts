@@ -28,7 +28,7 @@ export const RangeField: FC<RangeFieldProps> = ({
 
     <Row>
       <Col span='14' offset='8' className='py-3'>
-        <Slider range value={value} {...rest} />
+        <Slider range value={Array.from(value)} {...rest} />
       </Col>
     </Row>
   </>

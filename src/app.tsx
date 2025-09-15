@@ -3,7 +3,7 @@ import './app.css';
 import { configure } from 'mobx';
 import { PropsWithChildren, PureComponent } from 'react';
 
-configure({ useProxies: 'ifavailable', enforceActions: 'never' });
+configure({ useProxies: 'never', enforceActions: 'never' });
 
 export default class App extends PureComponent<PropsWithChildren> {
   componentDidShow() {}

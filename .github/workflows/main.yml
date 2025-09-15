@@ -37,7 +37,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           publish_dir: ./dist
-          personal_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           force_orphan: true
 
       - name: Deploy to Vercel

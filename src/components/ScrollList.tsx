@@ -1,42 +1,39 @@
 import { ScrollView, ScrollViewProps } from '@tarojs/components';
 import debounce from 'lodash.debounce';
-import { when } from 'mobx';
 import { TranslationModel } from 'mobx-i18n';
 import { observer } from 'mobx-react';
-import { DataObject, Filter, ListModel, Stream } from 'mobx-restful';
-import { Component, ReactNode } from 'react';
+import { isEqualProps, ObservedComponent, reaction } from 'mobx-react-helper';
+import { DataObject, Filter, ListModel } from 'mobx-restful';
+import { ReactNode } from 'react';
 
 export interface ScrollListProps<T extends DataObject = DataObject>
   extends Pick<ScrollViewProps, 'className' | 'style'> {
   translator: TranslationModel<string, 'load_more' | 'no_more'>;
   store: ListModel<T>;
   filter?: Filter<T>;
-  defaultData?: T[];
   renderList(allItems: T[]): ReactNode;
 }
 
 @observer
-export class ScrollList<T extends DataObject = DataObject> extends Component<
-  ScrollListProps<T>
-> {
-  async componentDidMount() {
-    const BaseStream = Stream<DataObject>,
-      { filter, defaultData } = this.props;
+export class ScrollList<
+  T extends DataObject = DataObject
+> extends ObservedComponent<ScrollListProps<T>> {
+  componentDidMount() {
+    super.componentDidMount?.();
 
-    const store = this.props.store as unknown as InstanceType<
-      ReturnType<typeof BaseStream>
-    >;
-    await when(() => store.downloading < 1);
-
-    store.clear();
-
-    if (defaultData) await store.restoreList({ allItems: defaultData, filter });
-
-    await store.getList(filter, store.pageList.length + 1);
+    this.reload(this.props.filter, {});
   }
 
   componentWillUnmount() {
+    super.componentWillUnmount?.();
+
     this.props.store.clear();
+  }
+
+  @reaction(({ observedProps }) => observedProps.filter)
+  reload(newFilter?: Filter<T>, oldFilter?: Filter<T>) {
+    if (!isEqualProps(newFilter, oldFilter))
+      this.props.store.getList(newFilter, 1);
   }
 
   loadMore = debounce(() => {
@@ -58,7 +55,7 @@ export class ScrollList<T extends DataObject = DataObject> extends Component<
       >
         {renderList(allItems)}
 
-        <footer className='mt-4 text-center text-muted small'>
+        <footer className='text-muted small mt-4 text-center'>
           {noMore || !allItems.length ? t('no_more') : t('load_more')}
         </footer>
       </ScrollView>

@@ -21,13 +21,13 @@ https://idea2app.github.io/Taro-Vant-MobX-ts/
 
 ## Extra components
 
-1. [Range Field](src/components/RangeField.tsx)
-2. [Area Select](src/components/AreaSelect.tsx)
+1. [Scroll List](src/components/ScrollList.tsx)
+2. [Range Field](src/components/RangeField.tsx)
+3. [Area Select](src/components/AreaSelect.tsx)
 
 ## Best practice
 
 1.  Install GitHub apps in your organization or account:
-
     1.  [Probot settings][12]: set up Issue labels & Pull Request rules
     2.  [PR badge][13]: set up Online [VS Code][14] editor entries in Pull Request description
 
@@ -103,6 +103,6 @@ pnpm build weapp
 [15]: https://github.com/new?template_name=Taro-Vant-MobX-ts&template_owner=idea2app
 [16]: https://github.com/idea2app/Taro-Vant-MobX-ts/blob/a25e770ae6b405eb1b152cec2f17f354c00be9fb/.github/workflows/main.yml#L12-L15
 [17]: https://github.com/idea2app/Taro-Vant-MobX-ts/settings/secrets/actions
-[18]: https://github.com/kaiyuanshe/kaiyuanshe.github.io/blob/bb4675a56bf1d6b207231313da5ed0af7cf0ebd6/.github/workflows/pull-request.yml#L32-L56
+[18]: https://github.com/idea2app/Lark-Next-Bootstrap-ts/blob/0ba4561daef428b3a0d7c07653a51583c5fd5fe4/.github/workflows/main.yml#L31-L60
 [19]: https://github.com/idea2app/Taro-Vant-MobX-ts/issues/new/choose
 [20]: https://github.com/idea2app/Taro-Vant-MobX-ts/projects

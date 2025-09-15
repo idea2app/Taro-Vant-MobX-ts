@@ -3,21 +3,21 @@
   "projectname": "taro-vant-mobx-ts",
   "description": "",
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": false,
     "postcss": false,
-    "minified": false,
+    "minified": true,
     "ignoreUploadUnusedFiles": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
     },
-    "minifyWXML": false,
+    "minifyWXML": true,
     "minifyWXSS": false
   },
   "compileType": "miniprogram",
-  "libVersion": "3.4.3",
+  "libVersion": "widelyUsed",
   "srcMiniprogramRoot": "dist/",
   "packOptions": {
     "ignore": [],
