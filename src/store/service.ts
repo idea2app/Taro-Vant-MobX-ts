@@ -11,8 +11,8 @@ export function baseRequest<B>({ path, ...option }: Request<B>) {
   });
 }
 
-if (typeof fetch !== 'function') {
-  githubClient.baseURI = 'https://oss-toolbox.kaiyuanshe.cn/api/GitHub/';
+if (process.env.TARO_ENV !== 'h5') {
+  githubClient.baseURI = 'https://bazaar.fcc-cd.dev/api/GitHub/';
 
   githubClient.baseRequest = baseRequest;
 }
