@@ -14,7 +14,7 @@ jobs:
       contents: write
       actions: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - if: github.repository != format('{0}/{1}', env.TEMPLATE_OWNER, env.TEMPLATE_NAME)
         run: |
@@ -23,6 +23,6 @@ jobs:
             ${{ github.repository_owner }} ${{ github.event.repository.name }}
           git checkout -- .github/workflows/init-template.yml
 
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: '[fix] replace Repository Name'
